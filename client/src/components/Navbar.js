@@ -18,13 +18,7 @@ function Navbar() {
             return (
                 <ul className="navLinks">
                     <li>
-                        <Link to="/"
-                        className="link">
-                            Login
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/"
+                        <Link to="/login"
                         className="link">
                             Login
                         </Link>

@@ -8,6 +8,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -38,6 +40,14 @@ function App() {
         <Route
         path="/"
         element={<Home/>}
+        />
+        <Route
+        path="/login"
+        element={<Login/>}
+        />
+        <Route
+        path="/signup"
+        element={<Signup/>}
         />
       </Routes>
     </Router>
