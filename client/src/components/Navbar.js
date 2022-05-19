@@ -6,7 +6,7 @@ function Navbar() {
     function showNavLoginStatus() {
         if (Auth.loggedIn()) {
             return (
-                <ul>
+                <ul className="navLinks">
                     <li>
                         <a href="/" onClick={() => Auth.logout()}>
                             Logout
@@ -16,9 +16,16 @@ function Navbar() {
             );
         } else {
             return (
-                <ul>
+                <ul className="navLinks">
                     <li>
-                        <Link to="/">
+                        <Link to="/"
+                        className="link">
+                            Login
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/"
+                        className="link">
                             Login
                         </Link>
                     </li>
@@ -27,9 +34,10 @@ function Navbar() {
         }
     }
     return (
-        <header>
+        <header className="header">
           <h1>
-            <Link to="/">
+            <Link to="/"
+            className="pageName">
               Yard Sale
             </Link>
           </h1>
