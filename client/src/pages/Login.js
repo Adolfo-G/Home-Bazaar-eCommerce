@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Login(props) {
+function Login() {
 
   return (
-    <div className="container my-1">
+    <div className="login-container">
       <h2>Login</h2>
       <form>
+        <label htmlFor="email">Email</label>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email</label>
           <input
             placeholder="email"
             name="email"
@@ -16,8 +16,8 @@ function Login(props) {
             id="email"
           />
         </div>
+        <label htmlFor="pwd">Password</label>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password</label>
           <input
             placeholder="******"
             name="password"
@@ -25,9 +25,9 @@ function Login(props) {
             id="pwd"
           />
         </div>
-        
-      <Link to="/signup">Signup</Link>
+        <button>Submit</button>
       </form>
+      <Link to="/signup">Signup</Link>
     </div>
   );
 }

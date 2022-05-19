@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Signup(props) {
+function Signup() {
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
-
+    <div className="login-container">
       <h2>Signup</h2>
       <form>
+        <label htmlFor="firstName">First Name:</label>
         <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
           <input
             placeholder="First"
             name="firstName"
@@ -18,8 +16,8 @@ function Signup(props) {
             id="firstName"
           />
         </div>
+        <label htmlFor="lastName">Last Name:</label>
         <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
           <input
             placeholder="Last"
             name="lastName"
@@ -27,8 +25,8 @@ function Signup(props) {
             id="lastName"
           />
         </div>
+        <label htmlFor="email">Email:</label>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
           <input
             placeholder="youremail@test.com"
             name="email"
@@ -36,8 +34,8 @@ function Signup(props) {
             id="email"
           />
         </div>
+        <label htmlFor="pwd">Password:</label>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
           <input
             placeholder="******"
             name="password"

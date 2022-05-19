@@ -38,4 +38,20 @@
   opacity: .8;
 }
 /* navbar */
-
+/* login */
+.login-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  margin:20px 10% 0px 10%;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+/* login */
