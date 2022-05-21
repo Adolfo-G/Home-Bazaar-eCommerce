@@ -1,28 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
 function Signup() {
+  const [formState, setFormState] = useState({ 
+    username:'', 
+    email: '', 
+    password: '' 
+  });
+  const [addUser] = useMutation(ADD_USER);
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {...formState},
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+    window.location.pathname('/')
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
   return (
     <div className="login-container">
       <h2>Signup</h2>
-      <form>
-        <label htmlFor="firstName">First Name:</label>
+      <form onSubmit={handleFormSubmit}>
+        <label htmlFor="username">User name:</label>
         <div className="flex-row space-between my-2">
           <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-          />
-        </div>
-        <label htmlFor="lastName">Last Name:</label>
-        <div className="flex-row space-between my-2">
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
+            placeholder="user name"
+            name="username"
+            type="username"
+            id="username"
+            onChange={handleChange}
           />
         </div>
         <label htmlFor="email">Email:</label>
@@ -32,6 +48,7 @@ function Signup() {
             name="email"
             type="email"
             id="email"
+            onChange={handleChange}
           />
         </div>
         <label htmlFor="pwd">Password:</label>
@@ -41,6 +58,7 @@ function Signup() {
             name="password"
             type="password"
             id="pwd"
+            onChange={handleChange}
           />
         </div>
         <div className="flex-row flex-end">
