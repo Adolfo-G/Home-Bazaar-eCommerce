@@ -8,9 +8,11 @@ function Navbar() {
             return (
                 <ul className="navLinks">
                     <li>
-                        <a href="/" onClick={() => Auth.logout()}>
+                        <Link to="/"
+                            className="link"
+                            onClick={() => Auth.logout()}>
                             Logout
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             );
@@ -19,7 +21,7 @@ function Navbar() {
                 <ul className="navLinks">
                     <li>
                         <Link to="/login"
-                        className="link">
+                            className="link">
                             Login
                         </Link>
                     </li>
@@ -29,18 +31,26 @@ function Navbar() {
     }
     return (
         <header className="header">
-          <h1>
-            <Link to="/"
-            className="pageName">
-              Yard Sale
-            </Link>
-          </h1>
-    
-          <nav>
-            {showNavLoginStatus()}
-          </nav>
+            <h1>
+                <Link to="/"
+                    className="pageName">
+                    Yard Sale
+                </Link>
+            </h1>
+
+            <nav className="navLink">
+                <ul className="navLinks">
+                    <li>
+                        <Link to="/personalListing"
+                            className="link">
+                            My Listing
+                        </Link>
+                    </li>
+                </ul>
+                {showNavLoginStatus()}
+            </nav>
         </header>
-      );
+    );
 }
 
 export default Navbar;

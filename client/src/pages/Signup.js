@@ -12,12 +12,17 @@ function Signup() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {...formState},
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
-    window.location.pathname('/')
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+      window.location.pathname('/')
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   const handleChange = (event) => {

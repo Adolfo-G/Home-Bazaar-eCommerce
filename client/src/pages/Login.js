@@ -11,15 +11,21 @@ function Login() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+      const { data } = await login({
+        variables: { ...formState },
       });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
-      window.location.pathname('/')
+
+      Auth.login(data.login.token);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+    window.location.pathname('/')
   };
 
   const handleChange = (event) => {
