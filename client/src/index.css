@@ -58,3 +58,21 @@
   overflow: hidden;
 }
 /* login */
+/* My Listing */
+.user-greeting{
+  text-align: center;
+}
+.listing-container{
+  background-color: silver;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: inline-flex;
+  padding: 20px;
+}
+.add-item-btn{
+  float:right;
+  margin-right: 5%;
+}
+/* My Listing */
