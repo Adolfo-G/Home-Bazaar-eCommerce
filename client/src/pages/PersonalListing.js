@@ -7,41 +7,37 @@ import { QUERY_USER, QUERY_PERSONAL_ITEMS } from "../utils/queries";
 
 function PersonalListing() {
     const email = Auth.getProfile().data.email
-    console.log(email)
-    const currentUser = useQuery(QUERY_USER,
+    const {loading, data}= useQuery(QUERY_USER,
         { variables: { email: email } }
     )
-    console.log(currentUser)
-
-    const username=currentUser.data.user.username
-    console.log(username)
+    const cUser= data?.user || [];
     
-    const items = useQuery(QUERY_PERSONAL_ITEMS,
-        { variables: { username: username} }
+    const username=cUser.username
+    console.log(username)
+    const {loading:loading2, data:data2}= useQuery(QUERY_PERSONAL_ITEMS,
+        { variables: { username: username } }
     )
-    if (currentUser.loading) {
-        return <div>Loading...</div>;
-    }
-    if (items.loading) {
-        return <div>Loading...</div>;
-    }
-    const listings=items.data.listing
+    const items= data2?.listing || [];
+    
     return (
+        <> {loading||loading2? <div>Loading...</div> :
         <div>
-            <h1 className="user-greeting">Welcome {username}</h1>
+            <h1 className="user-greeting">Welcome {cUser.username}</h1>
             <div>
                 <button>Make Listing Public</button>
                 <div>
                     <button className="add-item-btn">Add Item to listing</button>
                     <h2>Current Listed Items</h2>
                     <div className='listing'>
-                        {listings.map((item) => (
-                            <PersonalListedItems item={item} />
+                        {items.map((item) => (
+                            <PersonalListedItems item={item}
+                            key={item._id} />
                         ))}
                     </div>
                 </div>
             </div>
         </div>
+    }</>
     )
 }
 
