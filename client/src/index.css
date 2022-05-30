@@ -59,6 +59,15 @@
 }
 /* login */
 /* My Listing */
+.listing{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img{
+  height: 100px;
+  width:100px;
+}
 .user-greeting{
   text-align: center;
 }
@@ -69,6 +78,7 @@
   margin-bottom: 10px;
   border-radius: 5px;
   display: inline-flex;
+  flex-direction: column;
   padding: 20px;
 }
 .add-item-btn{

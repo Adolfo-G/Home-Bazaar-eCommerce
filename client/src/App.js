@@ -51,7 +51,11 @@ function App() {
         element={<Signup/>}
         />
         <Route
-        path="/personalListing"
+        path="/personalListing/"
+        element={<PersonalListing/>}
+        />
+        <Route
+        path="/personalListing/:username"
         element={<PersonalListing/>}
         />
       </Routes>
