@@ -4,6 +4,16 @@ import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { QUERY_USER, QUERY_PERSONAL_ITEMS } from "../utils/queries";
 
+function authCheck(){
+    if (Auth.loggedIn()===false) {
+        return (
+          <p className="text-primary">
+            You need to be logged in to see this. Use the navigation links above to
+            sign up or log in!
+          </p>
+        );
+      }
+}
 
 function PersonalListing() {
     const email = Auth.getProfile().data.email
@@ -18,7 +28,7 @@ function PersonalListing() {
         { variables: { username: username } }
     )
     const items= data2?.listing || [];
-    
+
     return (
         <> {loading||loading2? <div>Loading...</div> :
         <div>
@@ -41,4 +51,4 @@ function PersonalListing() {
     )
 }
 
-export default PersonalListing;
+export default Auth.loggedIn() ? PersonalListing : authCheck;

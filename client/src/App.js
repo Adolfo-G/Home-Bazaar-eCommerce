@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import PersonalListing from './pages/PersonalListing';
+import Listing from './pages/Listing';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -55,8 +56,8 @@ function App() {
         element={<PersonalListing/>}
         />
         <Route
-        path="/personalListing/:username"
-        element={<PersonalListing/>}
+        path="/Listing/:username"
+        element={<Listing/>}
         />
       </Routes>
     </Router>
