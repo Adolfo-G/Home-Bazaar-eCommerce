@@ -35,7 +35,7 @@ const typeDefs = gql`
   type Mutation {
     addListItem(
       username: String!,
-      imageRef: Int!,
+      imageRef: Int,
       item: String!,
       description: String!,
       stock: Int!,

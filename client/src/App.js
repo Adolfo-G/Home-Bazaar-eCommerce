@@ -10,8 +10,9 @@ import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import PersonalListing from './pages/PersonalListing';
 import Listing from './pages/Listing';
+import AddItem from './pages/AddItem'
+import PersonalListing from './pages/PersonalListing';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -58,6 +59,10 @@ function App() {
         <Route
         path="/Listing/:username"
         element={<Listing/>}
+        />
+        <Route
+        path = "/addItem"
+        element={<AddItem/>}
         />
       </Routes>
     </Router>

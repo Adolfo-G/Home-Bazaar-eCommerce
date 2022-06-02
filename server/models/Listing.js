@@ -8,7 +8,7 @@ const listingSchema = new Schema({
   },
   imageRef: {
     type: Number,
-    required: true,
+    default:0
   },
   item: {
     type: String,

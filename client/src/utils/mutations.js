@@ -29,11 +29,11 @@ export const ADD_USER = gql`
 export const ADD_LIST_ITEM = gql`
   mutation addListItem(
     $username: String!,
-    $imageRef: Int!,
+    $imageRef: Int,
     $item: String!,
     $description: String!,
     $stock: Int!,
-    $price: Sting!
+    $price: String!
     ) {
         addListItem(
           username :$username,
