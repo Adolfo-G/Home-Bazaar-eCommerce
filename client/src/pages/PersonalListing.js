@@ -36,6 +36,7 @@ function PersonalListing() {
         <div>
             <h1 className="user-greeting">Welcome {cUser.username}</h1>
             <div>
+                {/* TODO: save info on page and display a link on home screen */}
                 <button>Make Listing Public</button>
                 <div>
                     <Link to="/addItem">

@@ -85,3 +85,17 @@ export const EDIT_LIST_ITEM = gql`
       }
   }
 `;
+
+export const DELETE_LIST_ITEM = gql`
+  mutation deleteItem($itemId: ID!) {
+    deleteItem(itemId:$itemId) {
+        _id
+        username
+        imageRef
+        item
+        description
+        stock
+        price
+      }
+  }
+`;

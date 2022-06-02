@@ -107,16 +107,25 @@ const resolvers = {
                     },
                     {new:true}
                 );
-
-                // await User.findOneAndUpdate(
-                //     { _id: context.user._id },
-                //     { $addToSet: { listings: listItem._id } }
-                // );
-
                 return editlistItem;
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        deleteItem: async (parent, { itemId }, context) => {
+            if (context.user) {
+              const item = await Listing.findOneAndDelete({
+                _id: itemId,
+              });
+      
+              await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $pull: { listings: itemId } }
+              );
+      
+              return item;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
     }
 
 }
