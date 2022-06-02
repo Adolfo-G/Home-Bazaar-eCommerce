@@ -40,6 +40,14 @@ const typeDefs = gql`
       description: String!,
       stock: Int!,
       price: String!): Listing
+    editListItem(
+      itemId:ID!
+      username: String!,
+      imageRef: Int,
+      item: String!,
+      description: String!,
+      stock: Int!,
+      price: String!): Listing
     addUser(username: String!, email: String!, password: String!): Auth
     updateUser(username: String, email: String, password: String): User
     login(email: String!, password: String!): Auth

@@ -11,7 +11,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Listing from './pages/Listing';
-import AddItem from './pages/AddItem'
+import AddItem from './pages/AddItem';
+import EditItem from './pages/EditItem';
 import PersonalListing from './pages/PersonalListing';
 import Navbar from './components/Navbar';
 
@@ -63,6 +64,10 @@ function App() {
         <Route
         path = "/addItem"
         element={<AddItem/>}
+        />
+        <Route
+        path = "/EditItem/:_id"
+        element={<EditItem/>}
         />
       </Routes>
     </Router>

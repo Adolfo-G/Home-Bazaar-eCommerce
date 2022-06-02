@@ -34,7 +34,7 @@ function Navbar() {
             <h1>
                 <Link to="/"
                     className="pageName">
-                    Yard Sale
+                    Home Bazaar
                 </Link>
             </h1>
 

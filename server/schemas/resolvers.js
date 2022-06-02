@@ -84,6 +84,39 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+
+        editListItem: async (parent, {
+            itemId,
+            username,
+            imageRef,
+            item,
+            description,
+            stock,
+            price,
+            }, context) => {
+            if (context.user) {
+                const editlistItem = await Listing.findByIdAndUpdate(
+                    {_id: itemId},
+                    {
+                        username,
+                        imageRef,
+                        item,
+                        description,
+                        stock,
+                        price, 
+                    },
+                    {new:true}
+                );
+
+                // await User.findOneAndUpdate(
+                //     { _id: context.user._id },
+                //     { $addToSet: { listings: listItem._id } }
+                // );
+
+                return editlistItem;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
 
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import image1 from '../images/image1.jpg'
+import {Link} from 'react-router-dom'
 
 function PersonalListedItems({ item }) {
     const images=[image1]
@@ -15,7 +16,9 @@ function PersonalListedItems({ item }) {
             </div>
             <div className="item-buttons-container">
                 <button className="item-btn">Delete</button>
-                <button className="item-btn">Edit</button>
+                <Link to={'/EditItem/'+item._id}>
+                    <button className="item-btn">Edit</button>
+                </Link>
             </div>
         </div>
     )

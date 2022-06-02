@@ -54,3 +54,34 @@ export const ADD_LIST_ITEM = gql`
       }
   }
 `;
+
+export const EDIT_LIST_ITEM = gql`
+  mutation editListItem(
+    $itemId:ID!,
+    $username: String!,
+    $imageRef: Int,
+    $item: String!,
+    $description: String!,
+    $stock: Int!,
+    $price: String!
+    ) {
+        editListItem(
+          itemId:$itemId,
+          username :$username,
+          imageRef :$imageRef,
+          item :$item,
+          description :$description,
+          stock :$stock,
+          price :$price
+        ) 
+      {
+        _id
+        username
+        imageRef
+        item
+        description
+        stock
+        price
+      }
+  }
+`;

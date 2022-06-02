@@ -1,35 +1,35 @@
 import React, { useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 
-import {ADD_LIST_ITEM} from '../utils/mutations';
+import {EDIT_LIST_ITEM} from '../utils/mutations';
 import { QUERY_USER} from '../utils/queries';
 
 import Auth from '../utils/auth';
 
 
-const AddItemForm = () => {
+const EditItemForm = () => {
+    const params= useParams()
+    console.log(params._id)
     const email = Auth.getProfile().data.email
     const {loading:ApolloLoading, data:ApolloData}= useQuery(QUERY_USER,
         { variables: { email: email } }
     )
     const cUser= ApolloData?.user || [];
     const username = cUser.username
-    console.log()
     const [item, setItem] = useState('');
     const [description, setDescription] = useState('');
     const [stock, setStock]=useState('')
     const [price, setPrice]=useState('')
-    
-    const [addItem, { data, loading, error }] = useMutation(ADD_LIST_ITEM);
+    const [editItem, { data, loading, error }] = useMutation(EDIT_LIST_ITEM);
     if(loading){return "Loading"}
-    
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         
         try {
-            const { data } = await addItem({
+            const { data } = await editItem({
                 variables: {
+                    itemId:params._id,
                     username: username,
                     item,
                     description,
@@ -37,7 +37,6 @@ const AddItemForm = () => {
                     price,
                 },
             });
-
             setItem('');
             setDescription('');
             setStock('');
@@ -67,7 +66,7 @@ const AddItemForm = () => {
 
     return (
         <>{ApolloLoading? <p>Loading</p>:
-        <div className="post-form">
+        <div className="">
             <h3>My Post</h3>
 
             {Auth.loggedIn() ? (
@@ -139,4 +138,5 @@ const AddItemForm = () => {
     );
 };
 
-export default AddItemForm;
+export default EditItemForm;
+
