@@ -6,6 +6,7 @@ query user($email: String!) {
       _id
       username
       email
+      isListingPublic
       listings{
         _id
         username
@@ -24,6 +25,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      isListingPublic
       listings{
         _id
         username

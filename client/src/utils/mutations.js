@@ -99,3 +99,11 @@ export const DELETE_LIST_ITEM = gql`
       }
   }
 `;
+
+export const UPDATE_LISTING_VISIBILITY = gql`
+  mutation editUserListingStatus($isListingPublic: Boolean) {
+    editUserListingStatus(isListingPublic:$isListingPublic) {
+      isListingPublic
+      }
+  }
+`;

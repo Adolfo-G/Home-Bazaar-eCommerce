@@ -6,6 +6,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email:String
+    isListingPublic: Boolean
     listings: [Listing]!
   }
 
@@ -50,6 +51,7 @@ const typeDefs = gql`
       price: String!): Listing
     addUser(username: String!, email: String!, password: String!): Auth
     updateUser(username: String, email: String, password: String): User
+    editUserListingStatus(isListingPublic: Boolean): User
     login(email: String!, password: String!): Auth
     deleteItem(itemId: ID!): Listing
   }

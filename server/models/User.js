@@ -18,6 +18,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  isListingPublic:{
+    type: Boolean,
+    default:false,
+  },
   listings:[
     {
       type: Schema.Types.ObjectId,

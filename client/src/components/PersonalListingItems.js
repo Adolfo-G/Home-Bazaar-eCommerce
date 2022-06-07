@@ -7,7 +7,6 @@ import { DELETE_LIST_ITEM } from '../utils/mutations'
 function PersonalListedItems({ item }) {
     const images = [image1]
     let image = images[item.imageRef]
-    console.log(item._id)
     const [deleteItem, { data, loading, error }] = useMutation(DELETE_LIST_ITEM);
     if (loading) { return "Loading" }
     async function deleteCurrentItem() {
@@ -33,7 +32,6 @@ function PersonalListedItems({ item }) {
                 <p className="item-price">Price: ${item.price}</p>
             </div>
             <div className="item-buttons-container">
-                {/* TODO: add delete functionality */}
                 <button className="item-btn" onClick={() => deleteCurrentItem()}>Delete</button>
                 <Link to={'/EditItem/' + item._id}>
                     <button className="item-btn">Edit</button>

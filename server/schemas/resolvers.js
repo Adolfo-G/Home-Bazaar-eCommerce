@@ -126,6 +126,19 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
           },
+          editUserListingStatus: async (parent, {isListingPublic}, context) => {
+            if (context.user) {
+                const editListingStatus = await User.findOneAndUpdate(
+                    {email: context.user.email},
+                    {
+                        isListingPublic:isListingPublic,
+                    },
+                    {new:true}
+                );
+                return editListingStatus;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
 
 }
