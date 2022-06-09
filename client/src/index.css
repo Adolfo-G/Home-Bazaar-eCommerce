@@ -3,16 +3,20 @@
   margin: 0;
   padding: 0;
 }
+body{
+  background-image: url('./images/olga-thelavart-HZm2XR0whdw-unsplash.jpg');
+}
 /* navbar */
 .pageName{
   text-decoration: none;
-  color: white;
+  color: rgb(255, 207, 64);
 }
 .pageName:hover{
   cursor: pointer;
   opacity: .8;
 }
 .header{
+  background-image: url('./images/keith-misner-h0Vxgz5tyXA-unsplash.jpg');
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -36,9 +40,29 @@
   font-weight: 500;
   font-size: large;
   text-decoration: none;
+  color: rgb(255, 207, 64);
 }
 .link:hover{
   opacity: .8;
+}
+.homeImage{
+  display: block;
+  padding: 20px 0px 20px 0px;
+  height: 400px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro-text{
+  text-align: center;
+  display: block;
+  background-color: rgba(255, 250, 109, 0.5);
+  font-size: 20px;
+  
+}
+.sales-homepage{
+  display: inline-block;
+  padding-left: 5%;
 }
 /* navbar */
 /* login */
