@@ -5,17 +5,25 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find();
+            const users= await User.find({isListingPublic:true});
+            return users;
         },
         user: async (parent, { email }) => {
-            return User.findOne({ email });
+            const user = await User.findOne({ email });
+            return user;
+        },
+        listedUser: async (parent, { id }) => {
+            const listedUser= await User.findOne({ _id: id });
+            return listedUser;
         },
         listings: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Listing.find(params).sort({ createdAt: -1 });
+            const allListings = await Listing.find(params).sort({ createdAt: -1 });
+            return allListings
         },
         listing: async (parent, { username }) => {
-            return Listing.find({ username});
+            const listing = await Listing.find({ username});
+            return listing;
         },
         me: async (parent, args, context) => {
             if (context.user) {

@@ -8,9 +8,9 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home';
+import Listing from './pages/Listing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Listing from './pages/Listing';
 import AddItem from './pages/AddItem';
 import EditItem from './pages/EditItem';
 import PersonalListing from './pages/PersonalListing';
@@ -32,8 +32,19 @@ const authLink = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
+  uri:'/graphql',
   cache: new InMemoryCache(),
 });
+client.defaultOptions = {
+  watchQuery: {
+    fetchPolicy: 'network-only',
+    errorPolicy: 'ignore',
+  },
+  query: {
+    fetchPolicy: 'network-only',
+    errorPolicy: 'all',
+  },
+};
 
 function App() {
   return (
@@ -58,7 +69,7 @@ function App() {
         element={<PersonalListing/>}
         />
         <Route
-        path="/Listing/:username"
+        path="/Listing/:_id"
         element={<Listing/>}
         />
         <Route

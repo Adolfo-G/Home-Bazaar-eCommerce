@@ -47,7 +47,7 @@ function PersonalListing() {
         try {
             const { data } = await editIspublic({
                 variables: {
-                    isListingPublic: isPublic
+                    isListingPublic: isPublic || false
                 },
             });
             window.location.assign('/personalListing');
@@ -60,7 +60,6 @@ function PersonalListing() {
             <div>
                 <h1 className="user-greeting">Welcome {cUser.username}</h1>
                 <div>
-                    {/* TODO: save info on page and display a link on home screen */}
                     <>{cUser.isListingPublic === false ?
                         <button onClick={() => HandlePublicVisibility()}>Make Listing Public</button> :
                         <button onClick={() => HandlePublicVisibility()}>Make Listing Private</button>}

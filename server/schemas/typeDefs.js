@@ -29,6 +29,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(email:String!): User
+    listedUser(id:ID): User
     listings:[Listing]
     listing(username:String!):[Listing]
   }
