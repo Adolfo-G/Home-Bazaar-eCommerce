@@ -41,6 +41,12 @@ function Navbar() {
             <nav className="navLink">
                 <ul className="navLinks">
                     <li>
+                        <Link to="/cart"
+                            className="link">
+                            Cart
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/personalListing"
                             className="link">
                             My Listing

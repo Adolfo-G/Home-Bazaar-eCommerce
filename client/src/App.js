@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AddItem from './pages/AddItem';
 import EditItem from './pages/EditItem';
+import Cart from './pages/Cart';
 import PersonalListing from './pages/PersonalListing';
 import Navbar from './components/Navbar';
 
@@ -79,6 +80,10 @@ function App() {
         <Route
         path = "/EditItem/:_id"
         element={<EditItem/>}
+        />
+        <Route
+        path = "/Cart"
+        element={<Cart/>}
         />
       </Routes>
     </Router>
