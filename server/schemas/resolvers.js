@@ -147,6 +147,17 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        addToCart: async(parent, {itemId, stock},context)=>{
+            await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: { cart: itemId } }
+            );
+
+            await Listing.findOneAndUpdate(
+                { _id: itemId },
+                {$set:{stock:stock-1}}
+            )
+        }
     }
 
 }

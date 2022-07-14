@@ -107,3 +107,14 @@ export const UPDATE_LISTING_VISIBILITY = gql`
       }
   }
 `;
+
+export const ADD_TO_CART = gql`
+  mutation addToCart($itemId: ID!, $stock:Int!) {
+    addToCart(itemId: $itemId, stock: $stock) {
+        _id
+        cart{
+          _id
+        }
+      }
+    }
+`;
