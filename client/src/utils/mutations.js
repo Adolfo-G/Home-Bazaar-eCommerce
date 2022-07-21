@@ -109,8 +109,8 @@ export const UPDATE_LISTING_VISIBILITY = gql`
 `;
 
 export const ADD_TO_CART = gql`
-  mutation addToCart($itemId: ID!, $stock:Int!) {
-    addToCart(itemId: $itemId, stock: $stock) {
+  mutation addToCart($itemId: ID!, $stock:Int!, $price: String, $cartTotal: Int) {
+    addToCart(itemId: $itemId, stock: $stock, price: $price, cartTotal: $cartTotal) {
         _id
         cart{
           _id

@@ -22,6 +22,10 @@ const userSchema = new Schema({
     type: Boolean,
     default:false,
   },
+  cartTotal:{
+    type: Number,
+    default: 0,
+  },
   listings:[
     {
       type: Schema.Types.ObjectId,
@@ -33,7 +37,7 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Listing',
     },
-  ]
+  ],
 });
 
 // set up pre-save middleware to create password

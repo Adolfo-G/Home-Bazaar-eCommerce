@@ -7,6 +7,7 @@ const typeDefs = gql`
     username: String
     email:String
     isListingPublic: Boolean
+    cartTotal: Int
     listings: [Listing]!
     cart: [Listing]!
   }
@@ -37,7 +38,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addToCart(itemId:ID!, stock:Int!):User
+    addToCart(itemId:ID!, stock:Int!, price: String, cartTotal: Int):User
     addListItem(
       username: String!,
       imageRef: Int,

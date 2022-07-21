@@ -20,7 +20,7 @@ function Listing(){
     )
     const items = data2?.listing || [];
     console.log(items)
-    //console.log(loading2)
+    console.log("cartTotal" + listedUserData.cartTotal)
 
     return(
         <>
@@ -29,7 +29,7 @@ function Listing(){
                 <h1>Listing</h1>
                 <div className='listing'>
                     {items.map((item) => (
-                        <ListedItems item={item}
+                        <ListedItems item={item} cartTotal={listedUserData.cartTotal}
                             key={item._id} />
                     ))}
                 </div>

@@ -25,6 +25,7 @@ query user($email: String!) {
       username
       email
       isListingPublic
+      cartTotal
       listings{
         _id
         username
@@ -47,6 +48,7 @@ query listedUser($id: ID) {
       username
       email
       isListingPublic
+      cartTotal
       listings{
         _id
         username

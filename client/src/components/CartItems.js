@@ -11,9 +11,6 @@ function IndividualCartItems({ item }) {
     let price = itemData.price
     console.log(price)
 
-    let total = 0
-    total = total + parseFloat(price)
-
     return (
         <>{loading2?<div>...loading</div>:
         <>

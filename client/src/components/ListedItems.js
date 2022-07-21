@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client'
 import Auth from "../utils/auth";
 import { ADD_TO_CART } from '../utils/mutations';
 
-function ListedItems({ item }) {
+function ListedItems({ item, cartTotal }) {
     const images = [image1]
     let image = images[item.imageRef]
     console.log(item)
@@ -18,6 +18,8 @@ function ListedItems({ item }) {
                 variables: {
                     itemId: item._id,
                     stock:item.stock,
+                    price:item.price,
+                    cartTotal: cartTotal,
                 },
             });
             window.location.assign('/');
@@ -35,7 +37,7 @@ function ListedItems({ item }) {
                 <p className="item-stock">In Stock: {item.stock}</p>
                 <p className="item-price">Price: ${item.price}</p>
             </div>
-            {Auth.loggedIn() ?
+            {Auth.loggedIn() && item.stock>0 ?
             <div className="item-buttons-container">
                 <button className="item-btn" onClick={()=>addItemToCart()} >Add To Cart</button>
             </div>:""
