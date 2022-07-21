@@ -25,6 +25,10 @@ const resolvers = {
             const listing = await Listing.find({ username});
             return listing;
         },
+        item: async (parent,{id})=>{
+            const item = await Listing.findOne({_id:id});
+            return item;
+        },
         me: async (parent, args, context) => {
             if (context.user) {
                 return User.findOne({ _id: context.user._id }).populate('thoughts');

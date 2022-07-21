@@ -34,6 +34,9 @@ query user($email: String!) {
         stock
         price
       }
+      cart{
+        _id
+      }
     }
   }
 `;
@@ -78,6 +81,20 @@ export const QUERY_ME = gql`
 export const QUERY_PERSONAL_ITEMS = gql`
 query listing($username: String!) {
   listing(username: $username) {
+      _id
+      username
+      imageRef
+      item
+      description
+      stock
+      price
+    }
+  }
+`;
+
+export const QUERY_ITEM = gql`
+query item($id: ID) {
+  item(id: $id) {
       _id
       username
       imageRef

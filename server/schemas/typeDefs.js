@@ -33,6 +33,7 @@ const typeDefs = gql`
     listedUser(id:ID): User
     listings:[Listing]
     listing(username:String!):[Listing]
+    item(id:ID): Listing
   }
 
   type Mutation {
