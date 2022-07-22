@@ -5,7 +5,7 @@
         "item": "shoes",
         "description": "used red nike's",
         "stock": 1,
-        "price": "19.99"
+        "price": "19"
     },
     {
         "username": "admin",
@@ -13,6 +13,6 @@
         "item": "air pods",
         "description": "used white airpods",
         "stock": 2,
-        "price": "19.99"
+        "price": "19"
     }
 ]

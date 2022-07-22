@@ -5,17 +5,15 @@ import ListedUsers from "./ListedUsers";
 
 function HomeListings() {
     const { loading, data } = useQuery(QUERY_USERS)
-    
-    let listedUsers=data?.users
-    console.log("homelisting: "+listedUsers)
-    
+    let listedUsers = data?.users
+
     return (
         <>{loading ? <h1>Loading...</h1> :
-        <>
-            {listedUsers.map((listedUser) => (
-                <ListedUsers listedUser={listedUser}
-                    key={listedUser._id} />
-            ))}
+            <>
+                {listedUsers.map((listedUser) => (
+                    <ListedUsers listedUser={listedUser}
+                        key={listedUser._id} />
+                ))}
             </>}
         </>
     )

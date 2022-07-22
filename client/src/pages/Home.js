@@ -9,7 +9,7 @@ const Home =()=>{
             <div>
                 <p className="intro-text">
                     Hello and Welcome to Home Bazaar! 
-                    A place where sellers can market used goods and buyers can give those goods a second chance.      
+                    A place where anyone can turn their household goods into marketable items.      
                 </p>
                 <img src={homeImage} className='homeImage' alt="clem onojeghuo on unsplash"/>
             </div>

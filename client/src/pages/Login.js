@@ -20,7 +20,6 @@ function Login() {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
       email: '',
       password: '',

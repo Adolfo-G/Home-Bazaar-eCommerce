@@ -8,8 +8,6 @@ db.once('open', async () => {
   try {
     await User.deleteMany({});
     await Listing.deleteMany({})
-    //const users = await User.insertMany(userData)
-    console.log(userData.length)
     for(let i = 0; i<userData.length;i++){
       let username = userData[i].username;
       let email = userData[i].email;

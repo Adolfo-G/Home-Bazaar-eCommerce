@@ -16,6 +16,7 @@ import EditItem from './pages/EditItem';
 import Cart from './pages/Cart';
 import PersonalListing from './pages/PersonalListing';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,43 +51,46 @@ client.defaultOptions = {
 function App() {
   return (
     <ApolloProvider client={client}>
-    <Router>
-      <Navbar/>
-      <Routes>
-        <Route
-        path="/"
-        element={<Home/>}
-        />
-        <Route
-        path="/login"
-        element={<Login/>}
-        />
-        <Route
-        path="/signup"
-        element={<Signup/>}
-        />
-        <Route
-        path="/personalListing/"
-        element={<PersonalListing/>}
-        />
-        <Route
-        path="/Listing/:_id"
-        element={<Listing/>}
-        />
-        <Route
-        path = "/addItem"
-        element={<AddItem/>}
-        />
-        <Route
-        path = "/EditItem/:_id"
-        element={<EditItem/>}
-        />
-        <Route
-        path = "/Cart"
-        element={<Cart/>}
-        />
-      </Routes>
-    </Router>
+      <Router>
+        <div className='nav-and-body'>
+          <Navbar/>
+            <Routes>
+              <Route
+              path="/"
+              element={<Home/>}
+              />
+              <Route
+              path="/login"
+              element={<Login/>}
+              />
+              <Route
+              path="/signup"
+              element={<Signup/>}
+              />
+              <Route
+              path="/personalListing/"
+              element={<PersonalListing/>}
+              />
+              <Route
+              path="/Listing/:_id"
+              element={<Listing/>}
+              />
+              <Route
+              path = "/addItem"
+              element={<AddItem/>}
+              />
+              <Route
+              path = "/EditItem/:_id"
+              element={<EditItem/>}
+              />
+              <Route
+              path = "/Cart"
+              element={<Cart/>}
+              />
+            </Routes>
+            </div>
+        <Footer/>
+      </Router>
     </ApolloProvider>
   );
 }

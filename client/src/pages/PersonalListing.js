@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PersonalListedItems from "../components/PersonalListingItems";
 import { useQuery, useMutation } from "@apollo/client";
 import Auth from "../utils/auth";

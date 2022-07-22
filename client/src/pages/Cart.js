@@ -29,7 +29,7 @@ function Cart() {
     for (let c in cart) {
         cartItems.push(cart[c]._id)
     }
-    
+
     return (
         <>{loading ? <div>Loading...</div> :
             <>
@@ -38,8 +38,8 @@ function Cart() {
                     <div className='cart-item-container'>
                         {cartItems.map((item) => (
                             <CartItems item={item}
-                            key={item+Math.floor(Math.random(100))} />
-                            ))}
+                                key={item + Math.floor(Math.random(100))} />
+                        ))}
                     </div>
                     <div>
                         <h1 className="cartTotal">Total: ${cartTotal}</h1>

@@ -7,7 +7,7 @@ import { DELETE_LIST_ITEM } from '../utils/mutations'
 function PersonalListedItems({ item }) {
     const images = [image1]
     let image = images[item.imageRef]
-   
+
     const [deleteItem, { data, loading, error }] = useMutation(DELETE_LIST_ITEM);
     if (loading) { return "Loading" }
     async function deleteCurrentItem() {
