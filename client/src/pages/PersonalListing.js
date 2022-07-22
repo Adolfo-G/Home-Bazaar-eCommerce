@@ -9,7 +9,7 @@ import { UPDATE_LISTING_VISIBILITY } from "../utils/mutations";
 function authCheck() {
     if (Auth.loggedIn() === false) {
         return (
-            <p className="text-primary">
+            <p className="logged-out-text">
                 You need to be logged in to see this. Use the navigation links above to
                 sign up or log in!
             </p>

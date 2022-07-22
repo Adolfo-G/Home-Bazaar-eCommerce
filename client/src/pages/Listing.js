@@ -26,7 +26,7 @@ function Listing(){
         <>
             {al||bl ? <h2>loading...</h2> :
             <>
-                <h1>Listing</h1>
+                <h1 className="listing-welcome">Welcome to {username}'s Listing!</h1>
                 <div className='listing'>
                     {items.map((item) => (
                         <ListedItems item={item} cartTotal={listedUserData.cartTotal}

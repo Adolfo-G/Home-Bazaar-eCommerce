@@ -48,10 +48,16 @@ body{
 .homeImage{
   display: block;
   padding: 20px 0px 20px 0px;
-  height: 400px;
-  width: 90%;
+  height: 60vh;
+  width: 90vw;
   margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (max-width: 900px) {
+  .homeImage {
+    height: 45vh;
+    width: 90vw;
+  }
 }
 .intro-text{
   text-align: center;
@@ -95,6 +101,9 @@ img{
 }
 .user-greeting{
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  margin-top: 20px;
 }
 .listing-container{
   background-color: white;
@@ -115,19 +124,27 @@ img{
 /* Home page Listings */
 .listed-users{
   text-decoration: none;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: black;
+  font-family:Arial, Helvetica, sans-serif;
+  color: darkslategray;
 }
 .listed-users-container{
   background-color: white;
   border-style: double;
   padding: 5px 30px 5px 30px;
   margin-bottom: 5px;
+  width: 90vw;
+  text-align: center;
 }
 .listed-users-container:hover{
-  background-color: rgb(210, 210, 210);
+  background-color: rgb(255, 227, 68);
   color: white;
   cursor: pointer;
+}
+.sales-header{
+  font-family:Arial, Helvetica, sans-serif ;
+  text-decoration: underline;
+  color: darkslategrey;
+  margin-bottom: 10px;
 }
 /* Home page Listings */
 /* buttons */
@@ -141,3 +158,131 @@ button:hover{
   cursor: pointer;
 }
 /* buttons */
+/* public Listings */
+.listing-welcome{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+}
+/* public Listings */
+/* logged out message */
+.logged-out-text{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: rgb(255, 255, 121);
+}
+/* logged out message */
+/* Edit post */
+.edit-container{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: double;
+  background-color: whitesmoke;
+  width: 90%;
+}
+.edit-title{
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  margin-bottom: 10px;
+}
+.edit-item-name{
+  margin-bottom: 2px;
+}
+.edit-button{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 60vw;
+}
+.edit-button:hover{
+  background-color: gray;
+}
+.edit-form-input{
+  width: 60vw;
+  height: 5vh;
+}
+/* Edit post */
+/* Add post */
+.add-container{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: double;
+  background-color: whitesmoke;
+  width: 90%;
+}
+.add-title{
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  margin-bottom: 10px;
+}
+.add-item-name{
+  margin-bottom: 2px;
+}
+.add-button{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 60vw;
+}
+.add-button:hover{
+  background-color: gray;
+}
+.add-form-input{
+  width: 60vw;
+  height: 5vh;
+}
+/* Add post */
+/* cart */
+.cart-title{
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.cart-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: double;
+  background-color: white;
+  width: 60%;
+}
+.cartTotal{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: overline;
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 30px;
+  color: darkslategray;
+}
+.cart-item{
+  text-align: center;
+  margin-bottom: 10px;
+  color: darkslategray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.cart-checkout-btn-container{
+  text-align: center;
+  margin-top: 10px;
+}
+.cart-checkout-btn{
+  width: 30vw;
+  height: 4vh;
+}
+.cart-checkout-btn:hover{
+  background-color: gray;
+}
+/* cart */
+

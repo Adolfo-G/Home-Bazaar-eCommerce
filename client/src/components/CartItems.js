@@ -14,8 +14,7 @@ function IndividualCartItems({ item }) {
     return (
         <>{loading2?<div>...loading</div>:
         <>
-            <h1>{itemData.item}</h1>
-            <h1>{price}</h1>
+            <h2 className='cart-item'>{itemData.item} -- ${price}</h2>
         </>
         }</>
     )

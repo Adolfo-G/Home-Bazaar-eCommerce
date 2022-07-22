@@ -66,28 +66,28 @@ const EditItemForm = () => {
 
     return (
         <>{ApolloLoading? <p>Loading</p>:
-        <div className="">
-            <h3>My Post</h3>
+        <div className="edit-container">
+            <h2 className='edit-title'>Edit My Post</h2>
 
             {Auth.loggedIn() ? (
                 <>
                     <form
-                        className=""
+                        className="edit-form"
                         onSubmit={handleFormSubmit}
                     >
-                        <div className="">
+                        <div className="edit-item-name">
                             <input
                                 name="item"
                                 placeholder="Item Name"
                                 value={item}
-                                className="form-input"
+                                className="edit-form-input"
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="">
                             <textarea
                                 placeholder="Description"
-                                className="form-input"
+                                className="edit-form-input"
                                 id="post-content"
                                 name="description"
                                 value={description}
@@ -100,7 +100,7 @@ const EditItemForm = () => {
                                 name="stock"
                                 placeholder="# Amount in stock"
                                 value={stock}
-                                className="form-input"
+                                className="edit-form-input"
                                 onChange={handleChange}
                             />
                         </div>
@@ -110,13 +110,13 @@ const EditItemForm = () => {
                                 name="price"
                                 placeholder="Price"
                                 value={price}
-                                className="form-input"
+                                className="edit-form-input"
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="">
-                            <button className="" type="submit">
+                            <button className="edit-button" type="submit">
                                 Create
                             </button>
                         </div>

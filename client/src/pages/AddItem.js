@@ -67,8 +67,8 @@ const AddItemForm = () => {
 
     return (
         <>{ApolloLoading? <p>Loading</p>:
-        <div className="post-form">
-            <h3>My Post</h3>
+        <div className="add-container">
+            <h2 className='add-title'>Add Post</h2>
 
             {Auth.loggedIn() ? (
                 <>
@@ -76,19 +76,19 @@ const AddItemForm = () => {
                         className=""
                         onSubmit={handleFormSubmit}
                     >
-                        <div className="">
+                        <div className="add-item-name">
                             <input
                                 name="item"
                                 placeholder="Item Name"
                                 value={item}
-                                className="form-input"
+                                className="add-form-input"
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="">
                             <textarea
                                 placeholder="Description"
-                                className="form-input"
+                                className="add-form-input"
                                 id="post-content"
                                 name="description"
                                 value={description}
@@ -101,7 +101,7 @@ const AddItemForm = () => {
                                 name="stock"
                                 placeholder="# Amount in stock"
                                 value={stock}
-                                className="form-input"
+                                className="add-form-input"
                                 onChange={handleChange}
                             />
                         </div>
@@ -111,13 +111,13 @@ const AddItemForm = () => {
                                 name="price"
                                 placeholder="Price"
                                 value={price}
-                                className="form-input"
+                                className="add-form-input"
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="">
-                            <button className="" type="submit">
+                            <button className="add-button" type="submit">
                                 Create
                             </button>
                         </div>
