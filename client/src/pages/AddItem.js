@@ -42,7 +42,7 @@ const AddItemForm = () => {
             setDescription('');
             setStock('');
             setPrice('');
-            window.location.assign('/personalListing');
+            window.location.assign('/');
         } catch (err) {
             console.error(err);
         }

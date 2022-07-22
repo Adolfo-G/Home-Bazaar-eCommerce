@@ -50,7 +50,7 @@ function PersonalListing() {
                     isListingPublic: isPublic || false
                 },
             });
-            window.location.assign('/personalListing');
+            window.location.assign('/');
         } catch (err) {
             console.error(err);
         }
