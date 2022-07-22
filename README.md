@@ -9,6 +9,7 @@
   - Technical Approach
 
     This project uses a MERN stack approach with Apollo/Graphql. This project is still a work in progress with cart and checkout functionality to come.
+    Other technologies used: bcrypt, JWT.
     
 ![](./client/src/images/HB-Homepage.png)
 ![](./client/src/images/HB-User-Listing.png)
