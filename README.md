@@ -10,14 +10,15 @@
 
     This project uses a MERN stack approach with Apollo/Graphql. This project is still a work in progress with cart and checkout functionality to come.
     
-
+![](./client/src/images/HB-Homepage.png)
+![](./client/src/images/HB-User-Listing.png)
   ## Table of Contents
   * [Usage](#usage)
   * [License](#license)
   * [Questions](#questions)
 
   ## Usage
-  Project deployed at: 
+  Project deployed at: https://home-bazaar.herokuapp.com/
 
   ## License
  
