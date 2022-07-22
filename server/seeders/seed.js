@@ -1,10 +1,12 @@
 const db = require('../config/connection');
+const dotenv= require('dotenv')
 const pListingData=require('./data.json')
 const userData=require('./userData.json')
 const { signToken } = require('../utils/auth');
 const { User, Listing} = require('../models');
 
-db.once('open', async () => {
+dotenv.config()
+db().then(async () => {
   try {
     await User.deleteMany({});
     await Listing.deleteMany({})
