@@ -3,7 +3,7 @@
         "username": "admin",
         "imageRef": 0,
         "item": "shoes",
-        "description": "used red nike's",
+        "description": "used red trainers",
         "stock": 1,
         "price": "19"
     },
@@ -11,7 +11,7 @@
         "username": "admin",
         "imageRef": 0,
         "item": "air pods",
-        "description": "used white airpods",
+        "description": "used white headphones",
         "stock": 2,
         "price": "19"
     }
